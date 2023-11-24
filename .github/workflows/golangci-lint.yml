@@ -17,9 +17,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: install Go
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v4
         with:
           go-version: 1.21.x
+          cache: false
       - run: make build
       - name: Lint
         uses: golangci/golangci-lint-action@v3.4.0
